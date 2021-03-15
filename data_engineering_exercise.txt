@@ -1,0 +1,26 @@
+I have chosen to use pandas dataframes in Python to solve the questions. I downloaded the airline_portcountry.csv from the website on the worksheet and stored it in the same directory as my jupyter notebook. All the output csvs and text files are created in the same directory as the notebook.  
+
+Question 1 
+For each airline the sum of passengers in and out each month of 2019 has been stored in a csv (question_1.csv). It is sorted by airline name, and then total passengers in and out for every month of 2019. 
+
+Question 2
+For this question, I filtered my dataframe to get the last six months of the dataset, which were the last 6 months of 2020. And after finding the max number of Passengers-In, the code outputs the country (New Zealand) in a text file (question_2.txt).
+
+Question 3
+To get accurate values of the rolling average without rolling accross the airlines, I used the .unique() module of pandas to get data for each airline only once. Then, I was able to use the rolling() attribute of pandas to find the 3 month rolling average for each airline. The first two months of 2018 have NaN/empty values as expected, as we require 3 months to calculate the average. The output is a csv (question_3.csv). 
+
+Question 4
+Using pandas module .groupby(), I was able to create a new pandas dataframe, that included only the sum of all Mail-In, all Mail-Out for each airline. After that, I was able to produce a new column in the data frame that had the ratio of the Mail-In and Mail-Out for each airline. Ignoring the inf and the nan values, the code stores the top three airlines in a csv file (question_4.csv). 
+
+Question 5
+Unfortunately, due to time constraints I was unable to write a working solution for the Bonus Question. I do have a few experiments that I planned to get the solutions. 
+
+Experiment 1 : 
+The approach I took was observing and understanding the behaviour of each of the airlines.I watched https://www.youtube.com/watch?v=VjiH3mpxyrQ, to understand how airline businesses structured.
+This experiment aimed at recording when an airline stopped using their name, and when a new name of an airline appeared over the dataset/years. Apart from the name, the statistics of the route and freight would not change as much as, so I planned to compare the start and end dates of the airlines, and then further filter them using port_countries and freight (if required). 
+
+[When an airline changes their name, number of Passengers have the most variance, passengers can choose to stop flying or more passengers can start flying, its very inconsistent but freight has the least, due to their contractual nature with entities. 
+most variance > people > mail > freight > least variance]
+
+Experiment 2 :
+Using port_country, I planned to get a dict of all the airlines and their routes in a every month in a given year. Comparing this would allow me to spot the differences or similarities between the behaviour of airlines and find a correlation for the same.
